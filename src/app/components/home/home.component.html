@@ -1,19 +1,19 @@
-
 <section class="justify-content-center">
-  <div class="col-md-12 text-center">
-    <form class="form" action="">
-      <fieldset>
-        <label for="document_type">Tipo de documento</label>
-        <select class="custom-select" type="text" name="document_type" id="document_type" [(ngModel)]="document_type">
-          <option value="" selected>elije un tipo de documento</option>
+  <div class="col-md-12 text-center container mt-5 w-25">
+    <form class="form p-3 shadow" action="">
+      <small>Todos los campos son obligatorios</small>
+      <fieldset class="form-group m-2 text-start">
+        <label for="document_type" class="small text-primary">Tipo de documento</label>
+        <select class="form-control custom-select" type="text" name="document_type" id="document_type" [(ngModel)]="document_type">
+          <option value="" selected>Elije un tipo de documento</option>
           <option [value]="type" *ngFor="let type of document_types">{{type}}</option>
         </select>
       </fieldset>
-      <fieldset class="">
-        <label for="document_number">Número de documento</label>
-        <input type="text" name="document_number" id="document_number" placeholder="Ejemplo: 1039454860" [pattern]="documentNumberPattern" [(ngModel)]="document_number"  ><!--[valueAsNumber]="document_number | number: '1.0-0' "-->
+      <fieldset class="form-group m-2 text-start">
+        <label for="document_number" class="small text-primary">Número de documento</label>
+        <input type="text" name="document_number" id="document_number" class="form-control" placeholder="Ejemplo: 1039454860" [pattern]="documentNumberPattern" [(ngModel)]="document_number"  ><!--[valueAsNumber]="document_number | number: '1.0-0' "-->
       </fieldset>
-      <button [disabled]="!check()" [ngClass]="['btn']" [class.btn-primary]="check()" (click)="submit()">Buscar</button>
+      <button [disabled]="!check()" [ngClass]="['btn w-75', 'mt-2', 'rounded-pill']" [class.btn-primary]="check()" (click)="submit()">Buscar</button>
     </form>
   </div>
 </section>
