@@ -1,0 +1,9 @@
+{
+  "name": "Jhenny",
+  "lastname": "Perez",
+  "identity_number": 23445322,
+  "identity_type": "Cédula de Ciudadanía",
+  "phone": 1234567890,
+  "address": "Calle 123 # 123 - 123",
+  "city": "Bogotá"
+}

@@ -1,9 +1,22 @@
-<fieldset>
-  <section class="col-md-6">
-  <article class="card">
-    <div class="card-body">
-
-    </div>
+<section class="justify-content-center">
+  <article class="col-md-12  container mt-5">
+    <form class="form p-3 shadow col col-xs-8 col-sm-8 col-md-6 col-lg-4 mx-auto">
+    <h2 class="mb-3" >Información básica</h2>
+    <fieldset class="form-group my-3">
+      <label for="primerApellido" class="small">Primer apellido</label>
+      <input type="text"
+             class="form-control"
+             id="primerApellido"
+             [value]="user.lastname" readonly disabled>
+    </fieldset>
+    <fieldset class="form-group my-3">
+      <label for="primerNombre" class="small">Primer nombre</label>
+      <input type="text"
+             class="form-control"
+             id="primerNombre"
+             [value]="user.name" readonly disabled>
+    </fieldset>
+      <a [ngClass]="['btn w-100', 'mt-2', 'rounded-pill', 'btn-primary']" routerLink="/" >Volver</a>
+    </form>
   </article>
-  </section>
-</fieldset>
+</section>

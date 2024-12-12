@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {NgClass, NgForOf} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,10 @@ import {NgClass, NgForOf} from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  constructor(private router: Router) {
+  }
+
   get document_number(): number {
     return this._document_number;
   }
@@ -21,7 +26,7 @@ export class HomeComponent {
     if (typeof value === 'string') {
       value = parseInt(value.replace(/\D/g, ''));
     }
-    this._document_number = value;
+    if (value) this._document_number = value;
   }
 
   get document_type(): String {
@@ -50,6 +55,10 @@ export class HomeComponent {
   }
 
   onSubmit() {
-
+    if (this.check()) {
+      this.router.navigate(['/profile', this.document_type.charAt(0), this.document_number]);/*.then(r => console.debug('Form submitted'));*/
+    } else {
+      console.debug('Form not submitted');
+    }
   }
 }

@@ -1,9 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-.form{
 
-  background-color: rgb(247, 251, 255);
+:root {
+  --primary-color: rgb(0, 44, 118);
+  --disabled-color: rgb(234, 238, 242);
+  --form-bg: rgb(247, 251, 255);
+}
+
+.form {
+
+  background-color: var(--form-bg);
 
   & .custom-select {
     appearance: auto;
   }
+
+  & label.text-primary {
+    color: var(--primary-color) !important;
+  }
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn[disabled] {
+  background-color: var(--disabled-color) !important;
 }
